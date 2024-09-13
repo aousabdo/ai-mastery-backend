@@ -16,7 +16,8 @@ const pool = new Pool({
   }
 });
 
-app.use(cors({ origin: 'https://aousabdo.github.io' }));
+// app.use(cors({ origin: 'https://aousabdo.github.io' }));
+app.use(cors());
 app.use(express.json());
 
 // Helper function to run queries
