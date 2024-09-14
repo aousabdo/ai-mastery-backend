@@ -16,6 +16,15 @@ const pool = new Pool({
   }
 });
 
+pool.connect((err, client, release) => {
+  if (err) {
+    console.error('Error connecting to the database:', err.stack);
+  } else {
+    console.log('Connected to the database successfully');
+    release();
+  }
+});
+
 // app.use(cors({ origin: 'https://aousabdo.github.io' }));
 app.use(cors());
 app.use(express.json());
